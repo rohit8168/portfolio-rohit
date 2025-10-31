@@ -26,10 +26,9 @@ SECRET_KEY = 'django-insecure-0e=2ffne36wq3wgxb#5*i9a2_n8er^q0f$@5b@w+y6(-#$y(dj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 load_dotenv(os.path.join(BASE_DIR, '.env'))
-
-
+PORT = os.environ.get("PORT", "8000")
 SUPERUSER_USERNAME = os.environ.get('DJANGO_SUPERUSER_USERNAME')
 SUPERUSER_EMAIL = os.environ.get('DJANGO_SUPERUSER_EMAIL')
 SUPERUSER_PASSWORD = os.environ.get('DJANGO_SUPERUSER_PASSWORD')
