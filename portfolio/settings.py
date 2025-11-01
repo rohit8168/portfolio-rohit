@@ -81,15 +81,17 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'portfolio_db',  # e.g. portfolioDB
-        'CLIENT': {
-            'host': os.environ.get("MONGO_DB_URL"),
-            # 'server_api': {'version': '1'}
-        }
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get("DB_USER"),
+        'PASSWORD': os.environ.get("DB_PASS"),
+        'HOST': 'ep-royal-scene-ad9d4x1v-pooler.c-2.us-east-1.aws.neon.tech',
+        'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require',
+        },
     }
 }
-
 
 
 
